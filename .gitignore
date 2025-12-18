@@ -1,6 +1,4 @@
 images/monitor.png
 node_modules/
-package-lock.json
-package.json
 scripts/browser-polyfill.min.js
 scripts/browser-polyfill.min.js.map
