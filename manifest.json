@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Community Enhancer",
+  "version": "0.1",
+  "description": "This extension enhances the browsing experience on dogdrip and fmkorea.",
+  "icons": {
+    "16": "images/monitor_16.png",
+    "48": "images/monitor_48.png",
+    "128": "images/monitor_128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/monitor_16.png",
+      "48": "images/monitor_48.png",
+      "128": "images/monitor_128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.fmkorea.com/*"],
+      "js": ["scripts/fmk.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://*.dogdrip.net/*"],
+      "js": ["scripts/browser-polyfill.min.js", "scripts/dd.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@community-enhancer-ohmnr",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}
